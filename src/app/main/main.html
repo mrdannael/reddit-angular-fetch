@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="jumbotron text-center">
+    <h1 class="animated infinite pulse">Reddit Angular Fetch</h1>
+    <h3 ng-show="main.topic">Viewing category: r/{{main.topic}}</h3>
+  </div>
+
+  <div class="row action-buttons">
+      <button ng-click="main.fetch()" class="btn btn-success col-md-4 col-sm-4 col-xs-12">Fetch random category</button>
+      <button ng-click="main.pointless()" class="btn btn-success col-md-4 col-sm-4 col-xs-12">Pointless button</button>
+      <button ng-click="main.showAuthor()" class="btn btn-info col-md-4 col-sm-4 col-xs-12">Show author</button>
+  </div>
+
+  <div class="posts col-md-12">
+    <div class="post row" ng-repeat="post in main.posts">
+      <div class="col-md-1" ng-show="post.data.thumbnail">
+        <img ng-src="{{post.data.thumbnail}}" role="presentation" />
+      </div>
+      <div class="col-md-11 pull-left" ng-class="{'col-md-offset-1': !post.data.thumbnail}">
+        <h4>
+          <a ng-href="//reddit.com/{{post.data.permalink}}">{{post.data.title}}</a>
+        </h4>
+        <div><span>created</span> {{main.moment(post.data.created_utc * 1000).format('HH:mm:ss DD.MM.YYYY')}}</div>
+        <div><span>by</span> {{post.data.author}}</div>
+        <div><span>score</span> {{post.data.score}}</div>
+        <div><span>comments</span> {{post.data.num_comments}}</div>
+      </div>
+    </div>
+  </div>
+
+  <toaster-container></toaster-container>
+</div>
