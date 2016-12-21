@@ -13,7 +13,8 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
 // endbower
 
 body {
-  background-color: rgba(139, 69, 8, 0.57);
+  background-color: #7592A3;
+  color: #677C73;
 }
 
 .browsehappy {
@@ -32,7 +33,7 @@ body {
 }
 
 .jumbotron {
-  background-color: rgba(163, 82, 28, 0.55);
+  background-color: #25292C;
   color: white;
 }
 
@@ -41,7 +42,7 @@ h3 {
 }
 
 .action-buttons {
-  background-color: rgba(134, 67, 20, 0.36);
+  background-color: rgba(37, 41, 44, .7);
   padding: 12px;
   border-radius: 8px;
 
@@ -56,18 +57,22 @@ h3 {
   margin-top: 24px;
   .post {
     position: relative;
-    background-color: rgba(198, 105, 31, 0.17);
+    background-color: rgba(37, 41, 44, .95);
     height: auto;
-    border: 1px solid sandybrown;
-    border-radius: 4px;
+    border-radius: 3px;
     margin: 12px 0;
     padding: 8px 6px;
 
+    .flex-post-footer {
+      display: flex;
+      flex-direction: row;
+    }
+
     h4 {
-      color: #aa0000;
+      color: #5984A3;
       a {
         text-decoration: none;
-        color: #aa0000;
+        color: #5984A3;
         transition: color .5s ease;
 
         &:hover {
@@ -87,10 +92,11 @@ h3 {
     }
 
     span {
-      color: darkred;
+      color: #BFAE60;
       font-size: 10px;
       font-weight: bold;
       font-style: italic;
+      margin-left: 4px;
     }
   }
 }

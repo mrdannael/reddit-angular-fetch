@@ -13,17 +13,19 @@
 
   <div class="posts col-md-12">
     <div class="post row" ng-repeat="post in main.posts">
-      <div class="col-md-1" ng-show="post.data.thumbnail">
+      <div class="col-md-1 left-content" ng-show="post.data.thumbnail">
         <img ng-src="{{post.data.thumbnail}}" role="presentation" />
       </div>
       <div class="col-md-11 pull-left" ng-class="{'col-md-offset-1': !post.data.thumbnail}">
         <h4>
           <a ng-href="//reddit.com/{{post.data.permalink}}">{{post.data.title}}</a>
         </h4>
-        <div><span>created</span> {{main.moment(post.data.created_utc * 1000).format('HH:mm:ss DD.MM.YYYY')}}</div>
-        <div><span>by</span> {{post.data.author}}</div>
-        <div><span>score</span> {{post.data.score}}</div>
-        <div><span>comments</span> {{post.data.num_comments}}</div>
+        <div class="flex-post-footer">
+          <div><span>created</span> {{main.moment(post.data.created_utc * 1000).format('HH:mm:ss DD.MM.YYYY')}}</div>
+          <div><span>by</span> {{post.data.author}}</div>
+          <div><span>comments</span> {{post.data.num_comments}}</div>
+          <div><span>score</span> {{post.data.score}}</div>
+        </div>
       </div>
     </div>
   </div>
